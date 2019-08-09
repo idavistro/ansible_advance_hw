@@ -1,2 +1,29 @@
 ---
 # tasks file for app-tier
+
+- name: install {{app_name }}
+  yum:
+    name: "{{ app_name }}"
+    state: latest
+
+- name: enable {{ app_name }} at boot
+  service:
+    name: "{{ app_name }}"
+    enabled: yes
+
+- name: create tomcat default web directory
+  file:
+    path: "{{ app_web_root }}"
+    state: directory
+
+- name: copy static index.html
+  template:
+    src: index.html.j2
+    dest: "{{ app_web_root }}/index.html"
+    mode: 0644
+
+- name: restart tomcat
+  service:
+    name: "{{ app_name }}"
+    state: restarted
+
