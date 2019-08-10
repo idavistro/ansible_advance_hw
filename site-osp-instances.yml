@@ -3,6 +3,8 @@
   roles:
     - osp-servers
 
+  tasks:
+
   - name: Create Frontend
     include_role:
        name: osp-servers
