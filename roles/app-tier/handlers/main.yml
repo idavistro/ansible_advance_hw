@@ -3,7 +3,7 @@
 
 - name: start {{ app_name }}
   service:
-    name: {{ app_name }}
+    name: " {{ app_name }} "
     state: started
 
 

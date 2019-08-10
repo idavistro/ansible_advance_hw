@@ -1,10 +1,9 @@
 - hosts: workstation
   become: yes
   roles:
-    - osp-servers
+    - osp-facts
 
   tasks:
-
   - name: Create Frontend
     include_role:
        name: osp-servers

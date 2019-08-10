@@ -11,5 +11,9 @@
 - name: three teir app playbook
   import_playbook: site-3tier-app.yml
 
+- hosts: localhost
+  gather_facts: false
+  become: yes
+
   roles:
     - config-tower
