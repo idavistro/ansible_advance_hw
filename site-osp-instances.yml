@@ -2,3 +2,23 @@
   become: yes
   roles:
     - osp-servers
+
+  - name: Create Frontend
+    include_role:
+       name: osp-servers
+       vars_from: frontend.yml
+  
+  - name: Create App1
+    include_role:
+       name: osp-servers
+       vars_from: app1.yml
+
+  - name: Create App2
+    include_role:
+       name: osp-servers
+       vars_from: app2.yml
+
+  - name: Create DB
+    include_role:
+       name: osp-servers
+       vars_from: db.yml
