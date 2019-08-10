@@ -1,4 +1,4 @@
-name: app2
+name: app12
 state: present
 image: rhel-guest
 key_name: ansible_ssh
